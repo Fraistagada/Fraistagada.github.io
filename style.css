@@ -1,0 +1,531 @@
+/* Logo PokéApi */
+.titreApi {
+  position: absolute;
+  margin-right: auto;
+  width: 20%;
+  z-index: 4;
+  left: 1.5%;
+  margin-top: 0.8%;
+}
+
+/* Couleur  */
+body { 
+  transition:  0.2s linear;
+  background-color: #c02126;
+}
+.container-fluid {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  padding-left: 0;
+}
+.left {
+  transition:  0.2s linear;
+  flex: 32.5%;
+  background-color: #ffffff;
+  z-index: 1;
+}
+.center {
+  transition:  0.2s linear;
+  flex: 2%;
+  background-color: #000000;
+  z-index: 1;
+}
+.right {
+  flex: 80%;
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Cercle  */
+.outerCircle {
+  transition:  0.2s linear;
+  position: absolute;
+  margin-top: 13%;
+  height: 40.5%;
+  width: 18.5%;
+  background-color: #000000;
+  border-radius: 100%;
+  display: inline-block;
+  z-index: 2;
+  left: 20%;
+}
+.innerCircle {
+  transition:  0.2s linear;
+  position: absolute;
+  margin-top: 15%;
+  height: 32%;
+  width: 15%;
+  background-color: #ffffff;
+  border-radius: 100%;
+  display: inline-block;
+  z-index: 3;
+  left: 21.7%;
+}
+
+/* SearchBar + Button */
+.recherche {
+  transition:  0.2s linear;
+  height: 5%;
+  width: 15%;
+  left: 1.5%;
+  position: absolute;
+  z-index: 4;
+  margin-top: 10%;
+  border: none;
+  border-bottom: 2px solid #c02126;
+  border-width: 3px;
+  outline: none;
+  font-size: 1vw;
+
+}
+.recherche:hover{
+  transition: 0.3s;
+  background-color:rgb(242, 248, 245)
+}
+.recherche:focus{
+  transition: 0.7s;
+  background-color: rgb(236, 234, 234);
+}
+.rechercheButton {  
+  background-color: white;
+  transition:  0.2s linear;
+  height: 5%;
+  width: 2.2%;
+  left: 18%;
+  position: absolute;
+  z-index: 4;
+  margin-top: 10%;
+  border: none;
+  outline: none;
+  background-image: url(LoupeRed.svg);
+  background-repeat: no-repeat;
+}
+.rechercheButton:hover{
+  transition: 1s;
+  background-image: url(LoupeNoir.svg);
+}
+
+/* Sprite Pokemon */
+.pokemonSprite{
+  position: absolute;
+  z-index: 4;
+  margin-top: 15.8%;
+  left: 22.5%;
+  height: 26%;
+  width: 13%;
+  cursor: pointer;
+}
+/* Tableau Donnée */
+.dataTable{
+  position: absolute;
+  z-index: 4;
+  margin-top: 18.5%;
+  left: 0.5%;
+  width: 18%;
+  height: 26%;
+  table-layout: fixed;
+
+}
+.dataTable, td, th {
+  transition:  0.2s linear;
+  border: 1px solid #929292;
+  padding: 10px 15px;
+  
+}
+.tableCat{
+  transition:  0.2s linear;
+  background-color: #b8bab9;  
+  text-align: center;
+  font-weight: bold ;
+  font-size: 1vw;
+  width: 28%;
+}
+
+.tableStat{
+  text-align: left;
+  font-size: 1vw;
+}
+.pokeCat{
+  transition:  0.2s linear;
+  background-color: #b8bab9;
+  position: absolute;
+  margin-top: 14%;
+  z-index: 4;
+  width: 18%;
+  left: 0.5%;
+  text-align: center;
+  font-weight: bold ;
+  font-size: 1vw;
+  height: 7%;
+}
+
+/* Type Pokemon */
+.typeTable1{
+  position: absolute;
+  z-index: 5;
+  margin-top: 19%;
+  left: 6%;
+  height: 4.5%;
+  width: 2.15%;
+}
+.typeTable2{
+  position: absolute;
+  z-index: 5;
+  margin-top: 19%;
+  left: 12%;
+  height: 4.5%;
+  width: 2.15%;
+
+}
+.divType1{
+  transition:  0.2s linear;
+  position: absolute;
+  margin-top: 19.3%;
+  z-index: 4;
+  left: 8%;
+  right: 88.3%;
+  font-size: 1vw;
+  background-color: green;
+  height: 3.2%;
+}
+.divType2{
+  transition:  0.2s linear;
+  position: absolute;
+  margin-top: 19.3%;
+  background-color: grey;
+  z-index: 4;
+  left: 14%;
+  right: 81.8%;
+  font-size: 1vw;
+  height: 3.2%; 
+}
+.nameType{
+  transition:  0.2s linear;
+  text-align: center;
+  color:white
+}
+
+/* Stat Pokemon */
+.progress{
+  transition:  0.2s linear;
+  z-index: 5;
+  position: absolute;
+  width: 24%;
+  background-color: #B8BAB9;
+  left: 0.5%;
+  margin-top: 33.2%;
+  height: 2%;
+}
+ 
+.statPres{
+  z-index: 5;
+  position: absolute;
+  font-size: 1vw;
+  font-weight: bold ;
+  margin-top: 33.2%;
+  left:8%;
+
+}
+.statMin{
+  z-index: 5;
+  font-size: 1vw;
+  position: absolute;
+  font-weight: bold ;
+  margin-top: 33.2%;
+  left:0.5%;
+  height: 26%;
+  width: 13%;
+}
+.statMax{
+  z-index: 5;
+  position: absolute;
+  font-size: 1vw;
+  font-weight: bold ;
+  margin-top: 33.2%;
+  left:19.7%;
+}
+.stat1{
+  top: 4%;
+}
+.stat2{
+  top: 8%;
+}
+.stat3{
+  top: 12%;
+}
+.stat4{
+  top: 16%;
+}
+.stat5{
+  top: 20%;
+}
+.stat6{
+  top: 24%;
+}
+
+.nbStat{
+  z-index: 5;
+  position: absolute;
+  font-size: 1vw;
+  font-weight: bold ;
+  left:25%;
+}
+
+.statPV{
+  margin-top: 34.6%;
+}
+.statAtt{
+  margin-top: 36.55%;
+}
+.statDef{
+  margin-top: 38.4%;
+}
+.statAttS{
+  margin-top: 40.2%;
+}
+.statDefS{
+  margin-top: 42.1%;
+}
+.statVit{
+  margin-top: 43.9%;
+}
+
+/* Construction tableau */
+.pokemonlist{
+  transition:  0.2s linear;
+  background-color: #c02126;
+  position: absolute;
+  z-index: 5;
+  right: 4%;
+  width: 55%;
+  height: 71.4%;
+  margin-top: 8.4%;
+  overflow: auto;
+}
+.pokemonlist::-webkit-scrollbar {
+  display: none;
+}
+.listRight{
+  transition:  0.2s linear;
+  margin-top: 7%;
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+  z-index: 4;
+  right: 2.5%;
+  width: 1.5%;
+  height: 77.5%;
+}
+.listLeft{
+  transition:  0.2s linear;
+  margin-top: 7%;
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+  z-index: 4;
+  right: 59%;
+  width: 1.5%;
+  height: 77.5%;
+}
+.listUp{
+  transition:  0.2s linear;
+  margin-top: 7%;
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+  z-index: 4;
+  right: 3%;
+  width: 57%;
+  height: 3%;
+}
+.listDown{
+  transition:  0.2s linear;
+  bottom: 7.2%;
+  margin-top: 7%;
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+  z-index: 4;
+  right: 3%;
+  width: 57%;
+  height: 3%;
+}
+
+
+/* Interieur Box */
+.pokedexBox{
+  width: 100%;
+  height: 10%;
+  margin-top: 1.4%;
+}
+.pokedexBox:hover{
+  transition: 0.2s;
+  box-shadow: 5px 5px 10px black,-5px -5px 10px black ;
+}
+.pokedexBoxBlack{
+  transition:  0.2s linear;
+  position: absolute;
+  background-color: black;
+  width: 30%;
+  height: 10%;
+  right: 0%;
+  opacity: 1;
+}
+.triangle-code{
+  transition:  0.2s linear;
+  display : inline-block;
+  position: absolute;
+  height : 0;
+  width : 80%;
+  z-index: 6;
+  border-top : 51px solid #9B2024 ;
+  border-right : 51px solid transparent;
+ }
+ .pokedexBoxNumber{
+  transition:  0.2s linear;
+  position: absolute;
+  color: white;
+  z-index: 7;
+  right: 10%;
+  font-size: 1.5rem;
+  margin-top: 0.9%;
+ }
+.pokedexBoxCatch{
+  position: absolute;
+  width: 5.5%;
+  z-index: 7;
+  right: 3%;
+  margin-top: 0.3%;
+}
+.pokedexBoxSprite{
+  position: absolute;
+  width: 9%;
+  z-index: 7;
+  left: 2%;
+  margin-top: -10px;
+}
+.pokedexBoxName{
+  transition:  0.2s linear;
+  position: absolute;
+  color: #000000;
+  z-index: 7;
+  left: 15%;
+  font-size: 1.5rem;
+  margin-top: 0.9%;
+  font-family: sans-serif;
+} 
+
+/* Nom Pokemon */
+.NamePokemonDiv{
+  transition:  0.2s linear;
+  position: absolute;
+  margin-top: 1%;
+  width : 29%;
+  height: 12%;
+  z-index: 7;
+  left: 53%;
+  color: black;
+  text-align: center;
+  font-size: 400%;
+  border: thick solid black;
+  line-height: 100%;
+}
+
+/* Selection Liste */
+.ListeTriangleSelector{
+  border-top : 51px solid #d1000a ;
+}
+.ListeSelector{ 
+  transform: scale(1.1);
+}
+
+/* Boutton Dark Mode */
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+.checkbox-label {
+  transition:  0.2s linear;
+  background-color: #111;
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  position: absolute;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 8;
+  right: 2.5%;
+  margin-top: 1%;
+}
+.checkbox-label .ball {
+  transition:  0.2s linear;
+  background-color: #fff;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(24px);
+}
+
+/* Dark Mode Classe */
+.DarkmodeDark{
+  transition:  0.2s linear;
+  background-color: #0C0C0C;
+}
+.DarkmodeGold{
+  transition:  0.2s linear;
+  background-color: #481E14;
+}
+.DarkmodeGoldBorder{
+  transition:  0.2s linear;
+  border: thick solid #481E14;
+}
+.DarkmodeFontWhite{
+  color : white;
+}
+.DarkmodeDarkList{
+  border-top : 51px solid #702F1F ;
+}
+.DarkmodeGrey{
+  background-color : #481E14;
+}
+.DarkmodePlaceholder::-webkit-input-placeholder {
+  color: white
+}
+.DarkmodeBordeRecherche{
+  border-bottom: 2px solid #702F1F;
+}
+.DarkmodeButton{
+  transition: 1s;
+  background-color: #0C0C0C;
+  background-image: url(LoupeDarkRed.svg);
+}
+.DarkmodeButton:hover{
+  transition: 1s;
+  background-image: url(LoupeBlanche.svg);
+}
+.DarkmodeDarkRecherche{
+  transition:  0.2s linear;
+  background-color: #0C0C0C;
+  color: white;
+}
+.DarkmodeDarkRecherche:hover{
+  transition: 0.3s;
+  background-color:rgb(40, 40, 40)
+}
+.DarkmodeDarkRecherche:focus{
+  transition: 0.7s;
+  background-color: rgb(60, 60, 60);
+}
+.DarkmodeCheckBox{
+  background-color: #702F1F;
+}
+
+.DarkmodeListeTriangleSelector{
+  border-top : 51px solid #d1000a ;
+}

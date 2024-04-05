@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="fr">
+
+<!-- Header -->
+  <head> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PokeCherche</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet" >
+</head>
+
+<body>
+  <!-- Logo -->
+  <img src="titreAPI.png" class="titreApi" alt="TitreAPI">
+    
+  <!-- SearchBar + Button -->
+  <input type="text" class="recherche" id="recherche" placeholder="Pikachu, Dracaufeu, etc">
+  <button id="rechercheButton" onclick="SearchBar(), GetPokemon()" class="rechercheButton"></button>
+  
+  <!-- Sprite Pokemon -->
+  <img src="" alt="Pokemon Sprite" id="pokemonSprite" class="pokemonSprite" onclick="ChangeSprite()"style="display: none">
+
+  <!--  Img Type -->
+  <img src="" alt="Pokemon Type 1" id="typeTable1" class="typeTable1" style="display: block">
+  <img src="" alt="Pokemon Type 2" id="typeTable2" class="typeTable2" style="display: block">
+
+  <!-- Tableau Pokemon -->
+  <div id="pokemonlist" class="pokemonlist"></div>
+  <div id="listDown" class="listDown"></div>
+  <div id="listUp" class="listUp"></div>
+  <div id="listRight" class="listRight"></div>
+  <div id="listLeft" class="listLeft"> </div>
+
+  <!-- Nom Pokemon -->
+  <div id="NamePokemonDiv" class="NamePokemonDiv"></div>
+
+
+  <!-- Dark Mode -->
+  <div>
+    <input type="checkbox" class="checkbox" id="checkbox">
+    <label id="checkboxLabel" for="checkbox" class="checkbox-label">
+      <span class="ball"></span>
+    </label>
+  </div>
+
+
+  <!-- Données  -->
+  <table id="catTable" class="pokeCat">
+    <tr>
+      <td>catégorie Pokemon</td>
+    </tr>
+  </table>
+  <table id="dataTable" class="dataTable">
+    <tr>
+      <td id="tableType" class="tableCat">Type</td> 
+      <td>  
+      </td>
+    </tr>
+    <tr>
+      <td id="tableTaille" class="tableCat">Taille</td>
+      <td class="tableStat">En m</td>
+    </tr>
+    <tr>
+      <td id="tablePoid" class="tableCat">Poids</td>
+      <td class="tableStat">Poids (enKG).</td>
+    </tr>
+    <tr>
+      <td id="tableTalent" class="tableCat">Talent</td>
+      <td class="tableStat">Talent X</td>
+    </tr>
+  
+
+  </table>
+  <!-- Couleur + Ball + Nom Type + Statistique-->
+  <div class="container-fluid">
+    <div id="left" class="left"></div>
+
+  <!-- Type 2 Nom -->
+  <div id="divType2" class="divType2">
+    <div>
+      <p id="nameType1" class="nameType">Électrik</p>
+    </div>
+  </div>
+
+  <!-- Type 1 Nom -->
+  <div id="divType1" class="divType1">
+    <div>
+      <p id="nameType2" class="nameType">Ténèbres</p>
+    </div>
+  </div>
+
+  <!-- Statistique -->
+<div>
+  <p id="statPres" class="statPres">Statistique de base</p>
+  <p id="statMin" class="statMin">Min (0)</p>
+  <p id="statMax" class="statMax">Max (255)</p>
+
+  <p class="nbStat statPV" id="statPV">100</p>
+  <p class="nbStat statAtt"id="statAtt">100</p>
+  <p class="nbStat statDef"id="statDef">10</p>
+  <p class="nbStat statAttS"id="statAttS">50</p>
+  <p class="nbStat statDefS"id="statDefS">67</p>
+  <p class="nbStat statVit"id="statVit">120</p>
+
+
+  <div id="progress1" class="progress stat1" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+    <div id="stat1" class="progress-bar" style="width: 0%"></div>
+  </div>
+  <div id="progress2" class="progress stat2" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+    <div id="stat2" class="progress-bar" style="width: 25%"></div>
+  </div>
+  <div id="progress3" class="progress stat3" role="progressbar" aria-label="Basic example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+    <div id="stat3" class="progress-bar" style="width: 50%"></div>
+  </div>
+  <div id="progress4" class="progress stat4" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+    <div id="stat4" class="progress-bar" style="width: 75%"></div>
+  </div>
+  <div id="progress5" class="progress stat5" role="progressbar" aria-label="Basic example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+    <div id="stat5" class="progress-bar" style="width: 100%"></div>
+  </div>
+  <div id="progress6" class="progress stat6" role="progressbar" aria-label="Basic example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+    <div id="stat6" class="progress-bar" style="width: 100%"></div>
+  </div>
+</div>
+ 
+    <div id="center" class="center"></div>
+      <div id="outerCircle" class="outerCircle"> </div>
+      <div id="innerCircle" class="innerCircle"> </div>
+      <div id="right" class="right"></div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="PokeAPI.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>  
