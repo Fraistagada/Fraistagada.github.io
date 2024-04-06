@@ -291,6 +291,41 @@ body {
   margin-top: 43.9%;
 }
 
+
+/* Nom Stat */
+.NameStatFont{
+  position: absolute;
+  z-index: 7;
+  left: 20%;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+.PV{
+  margin-top: 34.8%;
+  left: 23%;
+}
+.Att{
+  margin-top: 36.6%;
+  left: 21%;
+}
+.Def{
+  margin-top: 38.5%;
+  left: 21%;
+}
+.AttS{
+  margin-top: 40.3%;
+  left: 19.4%;
+}
+.DefS{
+  margin-top: 42.15%;
+  left: 19.4%;
+}
+.Vit{
+  margin-top: 43.95%;
+  left: 21.5%;
+}
+
+
 /* Construction tableau */
 .pokemonlist{
   transition:  0.2s linear;
