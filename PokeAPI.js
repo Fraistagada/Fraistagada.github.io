@@ -1,4 +1,5 @@
-const input = document.getElementById("recherche"); //Active le bouton en appuyant sur entrer
+//Active le bouton en appuyant sur entrer
+const input = document.getElementById("recherche");
 input.addEventListener("keypress", function(event) {
   if (event.key === "Enter") {
     event.preventDefault();
@@ -6,6 +7,7 @@ input.addEventListener("keypress", function(event) {
   }
 });
 
+//Permet d'afficher le pokemon n°1 sur le site
 ApiUrl = `https://tyradex.tech/api/v1/pokemon/1`
 ApiUrlfull = `https://tyradex.tech/api/v1/pokemon`
 
@@ -63,12 +65,14 @@ checkbox.addEventListener("change", () => {
 })
 
 
+//Récupere le texte dans la barre de recherche
 function SearchBar() { 
     pokemonName = document.getElementById("recherche").value.toLowerCase();
     ApiUrl = `https://tyradex.tech/api/v1/pokemon/${pokemonName}`
     document.getElementById("recherche").value = ''
 }
 
+//Permet d'afficher successivement le sprite normal puis shiny du pokemon
 function ChangeSprite() {
   if (imgElement.src == pokemonSprite) {
     imgElement.src = pokemonSpriteShiny
@@ -78,6 +82,7 @@ function ChangeSprite() {
   }
 }
 
+//On récupère toute les donnée du pokemon pour les afficher a gauche
 function GetPokemon() {
 fetch(ApiUrl)
   .then(response => {
@@ -251,7 +256,7 @@ fetch(ApiUrl)
       document.getElementsByClassName("progress-bar")[5].style.backgroundColor = "blue" ;  
     }
 
-//Fetch PokeApi pour type
+//Fetch PokeApi pour type du pokemon
 fetch(ApiAng)
   .then(response => {
     if (!response.ok) {
@@ -391,7 +396,6 @@ fetch(ApiAng)
     if (types.includes(",")){   
       type2Name = Pokedata["types"][1]["name"]
       
-      //Type 2
       if (type2Name === "Combat"){
         nomType2.innerHTML=type2Name
         type2Name=spriteCombat
@@ -497,14 +501,13 @@ fetch(ApiAng)
 
       } 
     }
+
+  //Vérifie le nombre de type pour afficher 1 ou 2 type a l'écran 
     if (types.includes(",")){   
       type2IMG.style.display = "block"
       divType2.style.display = "block"
       type1IMG.src=type1Name
       type2IMG.src=type2Name
-
-      
-
     } else {
       type2IMG.style.display = "none"
       divType2.style.display = "none"
@@ -516,11 +519,11 @@ fetch(ApiAng)
     console.error('Erreur Api Anglais:', error);
   });
 
-
+//Autoscroll dans le tableau de droite lorsque un pokemon est cherche par recherche
 currentPoke=document.getElementById(`${PokeID}`)
 currentPoke.scrollIntoView({behavior: "smooth" ,block: 'center'})
 
-//Select pokemon
+//Darkmode de l'intérieur du tableau de droite via recherche
 for (i = 1; i <= lastElement; i++) { 
   document.getElementById(`triangle${i}`).classList.remove("ListeTriangleSelector")
   document.getElementById(`triangle${i}`).classList.remove("ListeSelector")
@@ -550,6 +553,7 @@ if (document.getElementById(`triangle${PokeID}`).classList.contains("DarkmodeDar
   
 }
 
+//Tableau de droite
 function PokeTable() {
   fetch(ApiUrlfull)
   .then(response => {
@@ -569,12 +573,9 @@ function PokeTable() {
     parent = document.getElementById("pokemonlist");
 
     //boucle création element
-    
-    ResetState = 0
-
-
     for (i = 1; i <= lastElement; i++) {
 
+      //Crée une div pour chaque pokemon
       pokedexBox = document.createElement("div");
       pokedexBox.className = "pokedexBox";
       pokedexBox.setAttribute("id", `${i}`);
@@ -583,10 +584,10 @@ function PokeTable() {
       pokedexBox.onclick = function(){
         ApiUrlID=this.getAttribute("id")
 
-        //Scroll
+        //Scroll sur le pokemon cliqué
         this.scrollIntoView({behavior: "smooth" , block: 'center'})
 
-        //Select pokemon
+        //Darkmode de l'intérieur du tableau de droite via click
         for (i = 1; i <= lastElement; i++) { 
           document.getElementById(`triangle${i}`).classList.remove("ListeTriangleSelector")
           document.getElementById(`triangle${i}`).classList.remove("ListeSelector")
@@ -609,11 +610,12 @@ function PokeTable() {
           document.getElementById(`triangle${ApiUrlID}`).classList.add("ListeTriangleSelector")
         }
 
-
+        //Affiche a gauche un pokemon cliqué a droite
         ApiUrl = `https://tyradex.tech/api/v1/pokemon/${ApiUrlID}`
         GetPokemon()
       }
-      
+
+      //Visuel tableau
       pokedexBoxTriangle = document.createElement("div");
       pokedexBoxTriangle.className = "triangle-code";
       pokedexBoxTriangle.setAttribute("id", `triangle${i}`);
