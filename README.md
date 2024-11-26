@@ -7,4 +7,4 @@ You can  click on the image to display his shiny version
 
 You can click on the button at the top right to change to dark theme
 
-Live site (if working) : https://fraistagada.github.io/Web-Pokedex/Fraistagada
+Live site (if working) : https://fraistagada.github.io/Web-Pokedex
