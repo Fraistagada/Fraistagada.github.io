@@ -8,8 +8,8 @@ input.addEventListener("keypress", function(event) {
 });
 
 //Permet d'afficher le pokemon n°1 sur le site
-ApiUrl = `https://tyradex.tech/api/v1/pokemon/1`
-ApiUrlfull = `https://tyradex.tech/api/v1/pokemon`
+ApiUrl = `https://tyradex.vercel.app/api/v1/pokemon/1`
+ApiUrlfull = `https://tyradex.vercel.app/api/v1/pokemon`
 
 PokeTable()
 GetPokemon()
@@ -68,7 +68,7 @@ checkbox.addEventListener("change", () => {
 //Récupere le texte dans la barre de recherche
 function SearchBar() { 
     pokemonName = document.getElementById("recherche").value.toLowerCase();
-    ApiUrl = `https://tyradex.tech/api/v1/pokemon/${pokemonName}`
+    ApiUrl = `https://tyradex.vercel.app/api/v1/pokemon/${pokemonName}`
     document.getElementById("recherche").value = ''
 }
 
@@ -611,7 +611,7 @@ function PokeTable() {
         }
 
         //Affiche a gauche un pokemon cliqué a droite
-        ApiUrl = `https://tyradex.tech/api/v1/pokemon/${ApiUrlID}`
+        ApiUrl = `https://tyradex.vercel.app/api/v1/pokemon/${ApiUrlID}`
         GetPokemon()
       }
 
